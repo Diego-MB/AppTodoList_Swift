@@ -50,6 +50,9 @@
                     <navigationItem key="navigationItem" title="Tarefas" id="1Nq-ds-a0B">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="A3b-0f-Kif">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="Fhs-J8-9TS" kind="show" identifier="addTarefa" id="itB-AD-6IL"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -57,20 +60,115 @@
             </objects>
             <point key="canvasLocation" x="-839" y="85"/>
         </scene>
-        <!--View Controller-->
+        <!--Nova Tarefa-->
         <scene sceneID="mde-7b-f21">
             <objects>
-                <viewController id="Fhs-J8-9TS" sceneMemberID="viewController">
+                <viewController id="Fhs-J8-9TS" customClass="TarefaViewController" customModule="AppTodoList_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uv3-7J-70b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWe-pj-cSi">
+                                <rect key="frame" x="20" y="118" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tAc-rT-QEq">
+                                <rect key="frame" x="20" y="144" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0j-1w-J09">
+                                <rect key="frame" x="20" y="208" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pco-Eh-Xs8">
+                                <rect key="frame" x="20" y="234" width="374" height="130"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="vMc-eQ-6gc"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data e Hora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bH-HV-C9o">
+                                <rect key="frame" x="20" y="394" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="XFO-aO-XLR">
+                                <rect key="frame" x="20" y="420" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GjZ-tO-jJG"/>
+                                </constraints>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ordem de Prioridade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tY7-uc-Wx0">
+                                <rect key="frame" x="20" y="500" width="158" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gd5-rL-p7f">
+                                <rect key="frame" x="20" y="526" width="374" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AOg-aP-Zbe"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Baixo"/>
+                                    <segment title="Médio"/>
+                                    <segment title="Alto"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aFJ-da-Ket"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gd5-rL-p7f" firstAttribute="top" secondItem="tY7-uc-Wx0" secondAttribute="bottom" constant="5" id="4qo-Fh-PPL"/>
+                            <constraint firstItem="M0j-1w-J09" firstAttribute="top" secondItem="tAc-rT-QEq" secondAttribute="bottom" constant="30" id="CLY-em-gWk"/>
+                            <constraint firstItem="pco-Eh-Xs8" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="Ey0-VZ-zzt"/>
+                            <constraint firstItem="pco-Eh-Xs8" firstAttribute="top" secondItem="M0j-1w-J09" secondAttribute="bottom" constant="5" id="FH9-Qv-kIG"/>
+                            <constraint firstItem="3bH-HV-C9o" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="Ic2-QK-fnX"/>
+                            <constraint firstItem="XFO-aO-XLR" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="IvL-PB-qNF"/>
+                            <constraint firstItem="3bH-HV-C9o" firstAttribute="top" secondItem="pco-Eh-Xs8" secondAttribute="bottom" constant="30" id="MJR-eX-uBf"/>
+                            <constraint firstItem="tY7-uc-Wx0" firstAttribute="top" secondItem="XFO-aO-XLR" secondAttribute="bottom" constant="30" id="OPm-pj-MKU"/>
+                            <constraint firstItem="aWe-pj-cSi" firstAttribute="top" secondItem="aFJ-da-Ket" secondAttribute="top" constant="30" id="RF0-Jq-9cm"/>
+                            <constraint firstItem="aWe-pj-cSi" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="TrZ-pt-FTa"/>
+                            <constraint firstItem="Gd5-rL-p7f" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="VBX-8t-zg4"/>
+                            <constraint firstItem="M0j-1w-J09" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="Zo0-XX-Uh0"/>
+                            <constraint firstItem="tY7-uc-Wx0" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="bj5-HI-Hqx"/>
+                            <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" secondItem="tAc-rT-QEq" secondAttribute="trailing" constant="20" id="cCU-XH-VY3"/>
+                            <constraint firstItem="tAc-rT-QEq" firstAttribute="top" secondItem="aWe-pj-cSi" secondAttribute="bottom" constant="5" id="cld-OM-XWL"/>
+                            <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" secondItem="pco-Eh-Xs8" secondAttribute="trailing" constant="20" id="kSr-SN-ELc"/>
+                            <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" secondItem="XFO-aO-XLR" secondAttribute="trailing" constant="20" id="lDm-Ci-cYG"/>
+                            <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" secondItem="Gd5-rL-p7f" secondAttribute="trailing" constant="20" id="lgU-zL-S4I"/>
+                            <constraint firstItem="tAc-rT-QEq" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="mmy-fd-kgE"/>
+                            <constraint firstItem="XFO-aO-XLR" firstAttribute="top" secondItem="3bH-HV-C9o" secondAttribute="bottom" constant="5" id="z1j-5U-RgU"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Nova Tarefa" id="4hu-bs-6oQ">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="8TT-Oj-RPP">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="salvar:" destination="Fhs-J8-9TS" id="4Nx-Sp-P7T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dataHoraTarefa" destination="XFO-aO-XLR" id="y99-LW-bYu"/>
+                        <outlet property="descricaoTarefa" destination="pco-Eh-Xs8" id="fWi-Dm-CdJ"/>
+                        <outlet property="prioridadeTarefa" destination="Gd5-rL-p7f" id="nDV-TN-JZR"/>
+                        <outlet property="tituloTarefa" destination="tAc-rT-QEq" id="x30-yF-b62"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMX-vr-yCb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="84"/>
+            <point key="canvasLocation" x="128.98550724637681" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="apt-fy-a0j">
@@ -109,6 +207,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
