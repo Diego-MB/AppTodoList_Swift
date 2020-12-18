@@ -129,6 +129,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Gd5-rL-p7f" firstAttribute="top" secondItem="tY7-uc-Wx0" secondAttribute="bottom" constant="5" id="4qo-Fh-PPL"/>
+                            <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tY7-uc-Wx0" secondAttribute="trailing" symbolic="YES" id="7Yx-nm-OTl"/>
                             <constraint firstItem="M0j-1w-J09" firstAttribute="top" secondItem="tAc-rT-QEq" secondAttribute="bottom" constant="30" id="CLY-em-gWk"/>
                             <constraint firstItem="pco-Eh-Xs8" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="Ey0-VZ-zzt"/>
                             <constraint firstItem="pco-Eh-Xs8" firstAttribute="top" secondItem="M0j-1w-J09" secondAttribute="bottom" constant="5" id="FH9-Qv-kIG"/>
@@ -143,10 +144,13 @@
                             <constraint firstItem="tY7-uc-Wx0" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="bj5-HI-Hqx"/>
                             <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" secondItem="tAc-rT-QEq" secondAttribute="trailing" constant="20" id="cCU-XH-VY3"/>
                             <constraint firstItem="tAc-rT-QEq" firstAttribute="top" secondItem="aWe-pj-cSi" secondAttribute="bottom" constant="5" id="cld-OM-XWL"/>
+                            <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3bH-HV-C9o" secondAttribute="trailing" symbolic="YES" id="gG6-no-gbx"/>
                             <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" secondItem="pco-Eh-Xs8" secondAttribute="trailing" constant="20" id="kSr-SN-ELc"/>
                             <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" secondItem="XFO-aO-XLR" secondAttribute="trailing" constant="20" id="lDm-Ci-cYG"/>
                             <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" secondItem="Gd5-rL-p7f" secondAttribute="trailing" constant="20" id="lgU-zL-S4I"/>
                             <constraint firstItem="tAc-rT-QEq" firstAttribute="leading" secondItem="aFJ-da-Ket" secondAttribute="leading" constant="20" id="mmy-fd-kgE"/>
+                            <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="M0j-1w-J09" secondAttribute="trailing" symbolic="YES" id="rDz-cf-A7L"/>
+                            <constraint firstItem="aFJ-da-Ket" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aWe-pj-cSi" secondAttribute="trailing" symbolic="YES" id="vwC-3c-YDI"/>
                             <constraint firstItem="XFO-aO-XLR" firstAttribute="top" secondItem="3bH-HV-C9o" secondAttribute="bottom" constant="5" id="z1j-5U-RgU"/>
                         </constraints>
                     </view>
