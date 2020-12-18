@@ -97,17 +97,30 @@ class ListarTarefasTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            
+            //Seleciona o item
+            let tarefa = self.tarefas[indexPath.row]
+            
+            //Remove do banco
+            self.context.delete(tarefa)
+            
+            //Removendo da lista
+            self.tarefas.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            
+            //Atualiza o banco
+            do {
+                try self.context.save()
+            } catch let erro {
+                print("Erro ao remover item \(erro.localizedDescription)")
+            }
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.
