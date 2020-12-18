@@ -57,6 +57,8 @@ class TarefaViewController: UIViewController {
         
         if tarefa == nil {
             self.salvarTarefa()
+        } else {
+            self.atualizarTarefa()
         }
         
         //Retornar para tela anteriro
@@ -81,6 +83,22 @@ class TarefaViewController: UIViewController {
         } catch let erro {
             print("Erro ao salvar tarefa: \(erro.localizedDescription)")
         }
+    }
+    
+    func atualizarTarefa() {
+        
+        tarefa.setValue(self.tituloTarefa.text, forKey: "titulo")
+        tarefa.setValue(self.descricaoTarefa.text, forKey: "descricao")
+        tarefa.setValue(self.dataHoraTarefa.date, forKey: "data")
+        tarefa.setValue(converterNumeroNome(indice: self.prioridadeTarefa.selectedSegmentIndex), forKey: "prioridade")
+        
+        do {
+            try context.save()
+            print("Sucesso ao atualizar tarefa!!!")
+        } catch let erro {
+            print("Erro ao atualizar tarefa: \(erro.localizedDescription)")
+        }
+        
     }
     
     //Conveter o nome em número da propriedade "prioridade"
