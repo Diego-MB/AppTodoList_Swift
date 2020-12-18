@@ -43,7 +43,7 @@ class DetalheViewController: UIViewController {
         
         if segue.identifier == "editarTarefa" {
             let viewDestino = segue.destination as! TarefaViewController
-            
+            viewDestino.title = "Editar Tarefa"
             viewDestino.tarefa = sender as? NSManagedObject
         }
         
@@ -64,6 +64,7 @@ class DetalheViewController: UIViewController {
             }
             if let prioridadeRecuperado = tarefa.value(forKey: "prioridade") {
                 self.prioridadeTarefa.text = prioridadeRecuperado as? String
+                trocaCorLabel(nome: prioridadeRecuperado as! String)
             }
         }
         
@@ -77,4 +78,19 @@ class DetalheViewController: UIViewController {
         return formataData.string(from: data)
     }
     
+    func trocaCorLabel(nome: String) {
+        
+        switch nome {
+        case "Baixo":
+            prioridadeTarefa.textColor = UIColor(hexString: "#FFCA00")
+        case "Médio":
+            prioridadeTarefa.textColor = UIColor(hexString: "#FF9600")
+        case "Alto":
+            prioridadeTarefa.textColor = UIColor(hexString: "#FF3D54")
+        default:
+            prioridadeTarefa.textColor = UIColor(hexString: "#FFCA00")
+        }
+    }
+    
 }
+

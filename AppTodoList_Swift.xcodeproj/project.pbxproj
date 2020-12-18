@@ -10,6 +10,7 @@
 		71A109E6258CC3D600D16FBA /* ListarTarefasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A109E5258CC3D600D16FBA /* ListarTarefasTableViewController.swift */; };
 		71A109EA258CCC5500D16FBA /* TarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A109E9258CCC5500D16FBA /* TarefaViewController.swift */; };
 		71A109EE258CE01900D16FBA /* DetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A109ED258CE01900D16FBA /* DetalheViewController.swift */; };
+		71A109F2258D103300D16FBA /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A109F1258D103300D16FBA /* ColorHex.swift */; };
 		71ADEEF3258C142400418434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADEEF2258C142400418434 /* AppDelegate.swift */; };
 		71ADEEF5258C142400418434 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADEEF4258C142400418434 /* SceneDelegate.swift */; };
 		71ADEEF7258C142400418434 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADEEF6258C142400418434 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		71A109E5258CC3D600D16FBA /* ListarTarefasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListarTarefasTableViewController.swift; sourceTree = "<group>"; };
 		71A109E9258CCC5500D16FBA /* TarefaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefaViewController.swift; sourceTree = "<group>"; };
 		71A109ED258CE01900D16FBA /* DetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheViewController.swift; sourceTree = "<group>"; };
+		71A109F1258D103300D16FBA /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		71ADEEEF258C142400418434 /* AppTodoList_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTodoList_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71ADEEF2258C142400418434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71ADEEF4258C142400418434 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				71ADEF00258C142900418434 /* LaunchScreen.storyboard */,
 				71ADEF03258C142900418434 /* Info.plist */,
 				71ADEEFB258C142400418434 /* AppTodoList_Swift.xcdatamodeld */,
+				71A109F1258D103300D16FBA /* ColorHex.swift */,
 			);
 			path = AppTodoList_Swift;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				71A109E6258CC3D600D16FBA /* ListarTarefasTableViewController.swift in Sources */,
 				71ADEEFD258C142400418434 /* AppTodoList_Swift.xcdatamodeld in Sources */,
 				71ADEEF3258C142400418434 /* AppDelegate.swift in Sources */,
+				71A109F2258D103300D16FBA /* ColorHex.swift in Sources */,
 				71A109EE258CE01900D16FBA /* DetalheViewController.swift in Sources */,
 				71ADEEF5258C142400418434 /* SceneDelegate.swift in Sources */,
 			);
