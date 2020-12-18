@@ -26,6 +26,30 @@ class DetalheViewController: UIViewController {
         
     }
     
+    //Recarrega a tela com novos valores
+    override func viewDidAppear(_ animated: Bool) {
+        recuperarTarefa()
+    }
+    
+    //Botão para enviar as informações para a tela seguinte
+    @IBAction func editar(_ sender: Any) {
+        
+        performSegue(withIdentifier: "editarTarefa", sender: self.tarefa)
+        
+    }
+    
+    //Prepara a segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "editarTarefa" {
+            let viewDestino = segue.destination as! TarefaViewController
+            
+            viewDestino.tarefa = sender as? NSManagedObject
+        }
+        
+    }
+    
+    //Recupera as informações
     func recuperarTarefa() {
         
         if tarefa != nil {
@@ -45,6 +69,7 @@ class DetalheViewController: UIViewController {
         
     }
     
+    //Formata a data
     func formatarData(data: Date) -> String {
         
         let formataData = DateFormatter()

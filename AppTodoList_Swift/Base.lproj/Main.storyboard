@@ -255,6 +255,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQg-ls-Mmm">
                                 <rect key="frame" x="187" y="456" width="40" height="30"/>
                                 <state key="normal" title="Editar"/>
+                                <connections>
+                                    <action selector="editar:" destination="xyQ-44-p6S" eventType="touchUpInside" id="SYO-je-uAm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n4K-TG-G51"/>
@@ -286,6 +289,7 @@
                         <outlet property="descricaoTarefa" destination="9xj-2F-qD3" id="17m-6g-agG"/>
                         <outlet property="prioridadeTarefa" destination="Nic-Wa-Knf" id="QUL-Kf-6k0"/>
                         <outlet property="tituloTarefa" destination="RUD-ZY-agp" id="AEa-qo-CnA"/>
+                        <segue destination="Fhs-J8-9TS" kind="show" identifier="editarTarefa" id="kkG-vz-PCX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSn-Tj-5Oe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -308,6 +312,9 @@
             <point key="canvasLocation" x="129" y="836"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kkG-vz-PCX"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
