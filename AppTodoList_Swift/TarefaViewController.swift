@@ -27,6 +27,7 @@ class TarefaViewController: UIViewController {
         self.descricaoTarefa.becomeFirstResponder()
         self.dataHoraTarefa.becomeFirstResponder()
         self.prioridadeTarefa.becomeFirstResponder()
+    
         
         if tarefa != nil {
             if let tituloRecuperado = tarefa.value(forKey: "titulo") {
@@ -100,6 +101,23 @@ class TarefaViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func corPrioridade(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            prioridadeTarefa.backgroundColor = UIColor(hexString: "#FFCA00")
+        case 1:
+            prioridadeTarefa.backgroundColor = UIColor(hexString: "#FF9600")
+        case 2:
+            prioridadeTarefa.backgroundColor = UIColor(hexString: "#FF3D54")
+        default:
+            prioridadeTarefa.backgroundColor = UIColor(hexString: "#FFCA00")
+        }
+        
+        
+    }
+    
     
     //Conveter o nome em número da propriedade "prioridade"
     func converteNomeNumero(nome: String) -> Int {
